@@ -15,7 +15,7 @@ load_dotenv()
 
 source_language = 'english'
 target_language = 'italian'
-extetion = 'vtt'
+extension = 'vtt'
 file_name = "example"
 
 llm = ChatGroq(
@@ -29,9 +29,9 @@ llm = ChatGroq(
 
 messages = [
     (
-        "system", f"You are a helpful assistant that translates {source_language.title()} to {target_language.title()}. Translate the user text, convert it from {extetion} into text and return only the text.",
+        "system", f"You are a helpful assistant that translates {source_language.title()} to {target_language.title()}. Translate the user text, convert it from {extension} into text and return only the text.",
     ),
-    ("human", file_operation(f"{file_name}.{extetion}", 'r')),
+    ("human", file_operation(f"{file_name}.{extension}", 'r')),
 ]
 
 ai_msg = llm.invoke(messages)
